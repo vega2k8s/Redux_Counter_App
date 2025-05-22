@@ -1,6 +1,7 @@
 import Counter from '../components/Counter';
 import * as actions from '../actions';
 import { connect } from 'react-redux';
+import { getRandomColor } from '../utils';
 
 // state 객체에 포함된 상태 변수를  Counter 컴포넌트에게 props로 전달합니다.
 const mapStateToProps = (state) => ({
@@ -16,8 +17,8 @@ const mapDispatchToProps = (dispatch) => ({
     increment: () => dispatch(actions.increment()),
     onDecrement: () => dispatch(actions.decrement()),
     onSetColor: () => {
-        const color = 'black' // 임시 getRandomColor()를 작성하여 변경할 예정
-        dispatch(actions.setColor(color));
+        //const color = 'red' // 임시 getRandomColor()를 작성하여 변경할 예정
+        dispatch(actions.setColor(getRandomColor()));
     }
 });
 
